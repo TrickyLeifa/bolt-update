@@ -14,8 +14,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ secrets.GITHUB_REF_NAME }}
-          name: ${{ secrets.GITHUB_REF_NAME }}
+          tag_name: ${{ secrets.GITHUB_HEAD_REF }}
+          name: ${{ secrets.GITHUB_HEAD_REF }}
           prerelease: false
           files: |
             ./*.zip
