@@ -4,17 +4,18 @@ on:
   push:
     branches: ["master", "nightly"]
 
-permissions: write-all
-
 jobs:
   Release:
     runs-on: ubuntu-latest
     
     steps:
       - uses: actions/checkout@v3
-      - uses: IsaacShelton/update-existing-release@v1.3.3
+      - uses: andelf/nightly-release@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          token: ${{secrets.GITHUB_TOKEN}}
-          replace: true
-          files: >
-            *.zip
+          tag_name: ${{ secrets.GITHUB_REF }}
+          name: ${{ secrets.GITHUB_REF }}
+          prerelease: false
+          files: |
+            ./*.zip
