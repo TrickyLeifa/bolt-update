@@ -14,5 +14,4 @@ jobs:
         with:
           token: ${{secrets.GITHUB_TOKEN}}
           replace: true
-          files: >
-            bolt-win64-qt5.15.2.zip
+          files: *.zip
