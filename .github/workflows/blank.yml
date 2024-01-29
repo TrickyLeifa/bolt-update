@@ -10,12 +10,13 @@ jobs:
     
     steps:
       - uses: actions/checkout@v3
+      - run: echo ${{ env.GITHUB_REF_NAME }}
       - uses: andelf/nightly-release@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ secrets.GITHUB_BASE_REF }}
-          name: ${{ secrets.GITHUB_BASE_REF }}
+          tag_name: ${{ env.GITHUB_BASE_REF }}
+          name: ${{ env.GITHUB_BASE_REF }}
           prerelease: false
           files: |
             ./*.zip
