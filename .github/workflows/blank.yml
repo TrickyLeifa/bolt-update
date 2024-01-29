@@ -10,7 +10,7 @@ jobs:
     
     steps:
       - uses: actions/checkout@v3
-      - run: echo ${{ env.GITHUB_REF_NAME }}
+      - run: echo ${{ secrets.GITHUB_REF_NAME }}
       - uses: andelf/nightly-release@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
