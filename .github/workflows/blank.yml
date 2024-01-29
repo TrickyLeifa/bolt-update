@@ -1,11 +1,11 @@
-name: Update release
+name: Release update
 
 on:
   push:
     branches: ["master", "nightly"]
 
 jobs:
-  build:
+  Release:
     runs-on: ubuntu-latest
     
     steps:
