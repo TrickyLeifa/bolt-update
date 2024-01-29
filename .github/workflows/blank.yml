@@ -4,6 +4,8 @@ on:
   push:
     branches: ["master", "nightly"]
 
+permissions: write-all
+
 jobs:
   Release:
     runs-on: ubuntu-latest
